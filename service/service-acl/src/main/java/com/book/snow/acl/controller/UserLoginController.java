@@ -2,11 +2,13 @@ package com.book.snow.acl.controller;
 
 
 import com.book.snow.common.result.JsonResult;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Api(tags = "用户测试")
 @CrossOrigin
 @RestController
 @RequestMapping("/admin/acl/user")

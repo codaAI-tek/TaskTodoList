@@ -10,10 +10,38 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>service-acl</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.minidev</groupId>
+            <artifactId>json-smart</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.5</version>
+        </dependency>
+    </dependencies>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
+    <build>
+        <!--使用的插件列表 。 -->
+        <plugins>
+            <!--plugin元素包含描述插件所需要的信息。 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--作为DOM对象的配置 -->
+                <configuration>
+                    <!-- 如果未指定，main将使用找到的第一个包含方法的编译类。这里指定启动类-->
+                    <mainClass>com.book.snow.ServiceAclApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>

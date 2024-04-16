@@ -16,6 +16,41 @@
     </modules>
 
     <dependencies>
+        <!--  测试依赖  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--        Google登录-->
+        <dependency>
+            <groupId>me.zhyd.oauth</groupId>
+            <artifactId>JustAuth</artifactId>
+            <version>1.16.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.api.client</groupId>
+            <artifactId>google-api-client-auth-oauth2</artifactId>
+            <version>1.2.3-alpha</version>
+        </dependency>
+
+        <!-- 邮箱验证码依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-http</artifactId>
+            <version>5.3.9</version>
+        </dependency>
+
         <!--依赖服务的工具类-->
         <dependency>
             <groupId>com.book</groupId>
@@ -72,5 +107,6 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
+
 
 </project>

@@ -44,7 +44,7 @@ public class Swagger2Config {
                 .select()
                 //只显示api路径下的页面
                 .apis(RequestHandlerSelectors.basePackage("com.book.snow"))
-                .paths(PathSelectors.regex("/api/.*"))
+                .paths(PathSelectors.regex("/api/web/.*"))
                 .build()
                 .globalOperationParameters(pars);
         return webApi;
@@ -70,7 +70,7 @@ public class Swagger2Config {
                 .select()
                 //只显示admin路径下的页面
                 .apis(RequestHandlerSelectors.basePackage("com.book.snow"))
-                .paths(PathSelectors.regex("/admin/.*"))
+                .paths(PathSelectors.regex("/api/admin/.*"))
                 .build()
                 .globalOperationParameters(pars);
         return adminApi;
@@ -81,7 +81,7 @@ public class Swagger2Config {
                 .title("网站-API文档")
                 .description("本文档描述了服务接口定义")
                 .version("1.0")
-                .contact(new Contact("bookserve", "http://xxx.com", "book"))
+                .contact(new Contact("TaskToDoList", "http://xxx.com", "book"))
                 .build();
     }
 
@@ -90,7 +90,7 @@ public class Swagger2Config {
                 .title("后台管理系统-API文档")
                 .description("本文档描述了后台系统服务接口定义")
                 .version("1.0")
-                .contact(new Contact("bookserve", "http://xxx.com", "book"))
+                .contact(new Contact("TaskToDoList", "http://xxx.com", "book"))
                 .build();
     }
 }

@@ -1,5 +1,8 @@
 server:
-  port: 9090
+  port: 6001
+  address: 0.0.0.0
+  servlet:
+    context-path: /api
 
 mybatis-plus:
   configuration:
@@ -9,9 +12,40 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/bookserve?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/task_todo_list?characterEncoding=utf-8&useSSL=false
     username: root
-    password: "123456"
+#    password: "123456"
+    password: "@Ywj031107"
+    #邮箱验证码配置
+  mail:
+    #smtp服务主机  qq邮箱则为smtp.qq.com; 163邮箱是smtp.163.com
+    host: smtp.qq.com
+    #服务协议
+    protocol: smtp
+    # 编码集
+    default-encoding: UTF-8
+    #发送邮件的账户
+    username: 1224973233@qq.com
+    #授权码
+    password: hgkecrzisjhffjfc
+    port: 465
+
+    # 昵称
+    nickname: ToDoList
+
+    test-connection: true
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
 
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss

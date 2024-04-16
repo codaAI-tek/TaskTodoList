@@ -1,2 +1,4 @@
-package com.book.snow.acl.controller;public class StripPayController {
+package com.book.snow.acl.controller;
+
+public class StripPayController {
 }

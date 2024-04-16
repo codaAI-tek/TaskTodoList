@@ -1,15 +1,17 @@
-package com.task.todolist.controller;
+package com.book.snow.acl.controller;
 
-import cn.hutool.core.date.DateTime;
-import com.task.todolist.entity.User;
-import com.task.todolist.mapper.UserMapper;
-import com.task.todolist.service.IUserService;
-import com.task.todolist.util.JsonResult;
+import com.alibaba.csp.sentinel.util.StringUtil;
+import com.book.snow.acl.service.IGoogleService;
+import com.book.snow.common.result.JsonResult;
+import com.book.snow.common.utils.JwtUtuil;
+import com.book.snow.model.user.GoogleUser;
+import com.book.snow.vo.GoogleLoginVo;
+import com.xkcoding.http.config.HttpConfig;
 import me.zhyd.oauth.config.AuthConfig;
+import me.zhyd.oauth.model.AuthCallback;
 import me.zhyd.oauth.model.AuthResponse;
 import me.zhyd.oauth.model.AuthUser;
 import me.zhyd.oauth.request.AuthGoogleRequest;
-import me.zhyd.oauth.model.AuthCallback;
 import me.zhyd.oauth.request.AuthRequest;
 import me.zhyd.oauth.utils.AuthStateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,34 +20,30 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-//import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
-//import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken.Payload;
-//import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
-//
 
 @RestController
 @RequestMapping("/oauth")
 public class RestAuthController {
     @Autowired
-    UserMapper userMapper;
+    IGoogleService googleService;
 
-    @Autowired
-    IUserService userService;
 
     @RequestMapping("/render/{source}")
-    public JsonResult<String> renderAuth(HttpServletResponse response) throws IOException {
+    public JsonResult renderAuth(HttpServletResponse response) throws IOException {
         AuthRequest authRequest = getAuthRequest();
         String authorizeUrl = authRequest.authorize(AuthStateUtils.createState());
-//        response.sendRedirect(authorizeUrl);
-        JsonResult<String> result = new JsonResult<>();
-        result.setState(200);
-        result.setData(authorizeUrl);
-        return result;
-    }
-//    @PostMapping()
-//    public JsonResult<String> renderAuth(@Req){}
 
+        Map<String,Object> map = new HashMap<>();
+        map.put("loginUrl",authorizeUrl);
+
+        return JsonResult.ok(map);
+    }
 
     @RequestMapping("/test")
     public String testAuth(HttpServletResponse response) throws IOException {
@@ -53,40 +51,34 @@ public class RestAuthController {
     }
 
     @RequestMapping("/callback/{source}")
-    public JsonResult<User> login(AuthCallback callback) {
+    public JsonResult login(AuthCallback callback) {
 
         AuthRequest authRequest = getAuthRequest();
         AuthResponse response = authRequest.login(callback);
-
         AuthUser authUser = (AuthUser) response.getData();
-        JsonResult<User> result = new JsonResult<>();
-        User user = new User();
-        user.setUserName(authUser.getNickname());
-        user.setUserAcount(authUser.getEmail());
-        user.setEmail(authUser.getEmail());
-        user.setUserId(authUser.getEmail());
+
+        GoogleUser user = new GoogleUser();
         user.setAvatar(authUser.getAvatar());
-        user.setCreatedAt(new DateTime());
-        user.setIsDelete(0);
-        User byUserAccount = userMapper.findByUserAccount(user.getUserAccount());
-        System.out.println(user);
-        if(byUserAccount == null){
-            try{
-                Integer insert = userMapper.insert(user);
-            }catch (Exception e){
-                System.out.println(e);
+        user.setEmail(authUser.getEmail());
+        user.setUserAccount(authUser.getEmail());
+        user.setLocation(authUser.getLocation());
+        user.setNickName(authUser.getNickname());
+        user.setSex(authUser.getGender().toString());
+
+        List<GoogleUser> list = googleService.selectByEmail(user.getEmail());
+        if(list.size() <= 0){
+            boolean save = googleService.save(user);
+            if(save){
+                user.setToken(JwtUtuil.createToken(user));
+                return JsonResult.ok(user);
+            }else {
+                return JsonResult.fail(null);
             }
-            User loginByGoogle = userService.loginByGoogle(user);
-            result.setData(loginByGoogle);
-            result.setMsg("登陆成功");
-            result.setState(200);
-            return result;
+        }else{
+            user.setToken(JwtUtuil.createToken(list.get(0)));
+            return JsonResult.ok(user);
         }
-        User user1 = userService.loginByGoogle(user);
-        result.setData(user1);
-        result.setMsg("登陆成功");
-        result.setState(200);
-        return result;
+
     }
 
     private AuthRequest getAuthRequest() {
@@ -97,7 +89,7 @@ public class RestAuthController {
 //                .clientId("894916106231-2rlf1s98a1kcf54ts4mih8t70ts9f4eq.apps.googleusercontent.com")
 //                .clientSecret("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")
 //                .redirectUri("http://localhost:6001/api/oauth/callback/google")
-//                 针对国外平台配置代理
+//                 //针对国外平台配置代理
 //                .httpConfig(HttpConfig.builder()
 //                        .timeout(15000)
 //                        // host 和 port 请修改为开发环境的参数
@@ -106,41 +98,4 @@ public class RestAuthController {
                 .build());
     }
 
-//    @PostMapping("/check")
-//    public void check(){
-//
-//
-//        GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
-//                // Specify the CLIENT_ID of the app that accesses the backend:
-//                .setAudience(Collections.singletonList(CLIENT_ID))
-//                // Or, if multiple clients access the backend:
-//                //.setAudience(Arrays.asList(CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3))
-//                .build();
-//
-//// (Receive idTokenString by HTTPS POST)
-//
-//        GoogleIdToken idToken = verifier.verify(idTokenString);
-//        if (idToken != null) {
-//            Payload payload = idToken.getPayload();
-//
-//            // Print user identifier
-//            String userId = payload.getSubject();
-//            System.out.println("User ID: " + userId);
-//
-//            // Get profile information from payload
-//            String email = payload.getEmail();
-//            boolean emailVerified = Boolean.valueOf(payload.getEmailVerified());
-//            String name = (String) payload.get("name");
-//            String pictureUrl = (String) payload.get("picture");
-//            String locale = (String) payload.get("locale");
-//            String familyName = (String) payload.get("family_name");
-//            String givenName = (String) payload.get("given_name");
-//
-//            // Use or store profile information
-//            // ...
-//
-//        } else {
-//            System.out.println("Invalid ID token.");
-//        }
-//    }
 }

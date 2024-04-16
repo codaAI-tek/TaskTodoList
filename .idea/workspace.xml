@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0b5d55ba-4852-4532-9d4d-9b149586b0ed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/config/RestTemplateConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/utils/JwtUtuil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/Log/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/Reference/Reference.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/Task/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/TaskRef/TaskRef.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/XMind/XMind.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/base/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/user/GoogleUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/vo/GoogleLoginVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/config/InterceptorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/ReferenceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/RestAuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/StripPayController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/TaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/XMindController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/intercaptor/TokenFilterInterCaptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/mapper/GoogleLoginMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/mapper/LogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/mapper/ReferenceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/mapper/TaskMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/mapper/TaskRefMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/IGoogleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/ILogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/IReferenceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/ITaskRefService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/ITaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/GoogleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/LogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/ReferenceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/TaskRefServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/TaskServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/test/java/com/book/snow/ApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/test/java/com/book/snow/test/XMindTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/config/Swagger2Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/result/JsonResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/result/JsonResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/target/classes/com/book/snow/common/config/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/target/classes/com/book/snow/common/config/Swagger2Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/target/classes/com/book/snow/common/result/JsonResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/target/classes/com/book/snow/common/result/JsonResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/base/UserBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/base/UserBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/book/snow/model/base/UserBaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/classes/com/book/snow/model/base/UserBaseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/UserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/UserLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/controller/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/controller/UserLoginController.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\apache-maven-3.9.6-bin\repository" />
+        <option name="mavenHome" value="D:/apache-maven-3.9.6-bin/apache-maven-3.9.6" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.9.6-bin\apache-maven-3.9.6\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2ehdXWYMI9IqKoyQYAdxJBZwg5G" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/AKAYWJ/Desktop/TaskTodoList/TaskToDolist/common/service-util/src/main/java/com/book/snow/common&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;c1d94abb7a708bbf46d42cef5a122c23&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AKAYWJ\Desktop\TaskTodoList\TaskToDolist\common\service-util\src\main\java\com\book\snow\common" />
+      <recent name="C:\Users\AKAYWJ\Desktop\TaskTodoList\TaskToDolist\common\service-util\src\main\java\com\book\snow\common\config" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Test" />
+      <recent name="com.book.snow.common.utils" />
+      <recent name="com.book.snow.acl.controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ServiceAclApplication">
+    <configuration name="JWTTest.checkJwt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service-acl" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.JWTTest" />
+      <option name="METHOD_NAME" value="checkJwt" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JWTTest.parseGoogle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service-acl" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.JWTTest" />
+      <option name="METHOD_NAME" value="parseGoogle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XMindTest.testXMind" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service-acl" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.book.snow.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.book.snow.test" />
+      <option name="MAIN_CLASS_NAME" value="com.book.snow.test.XMindTest" />
+      <option name="METHOD_NAME" value="testXMind" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XMindeTest.getXMindTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service-acl" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.XMindeTest" />
+      <option name="METHOD_NAME" value="getXMindTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceAclApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="service-acl" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.book.snow.ServiceAclApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.book.snow.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ServiceAclApplication" />
+        <item itemvalue="JUnit.XMindTest.testXMind" />
+        <item itemvalue="JUnit.XMindeTest.getXMindTest" />
+        <item itemvalue="JUnit.JWTTest.parseGoogle" />
+        <item itemvalue="JUnit.JWTTest.checkJwt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0b5d55ba-4852-4532-9d4d-9b149586b0ed" name="Changes" comment="" />
+      <created>1712360787227</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712360787227</updated>
+      <workItem from="1712360788696" duration="13079000" />
+      <workItem from="1712466751821" duration="625000" />
+      <workItem from="1712703758266" duration="12859000" />
+      <workItem from="1712724540567" duration="9209000" />
+      <workItem from="1712834195615" duration="3184000" />
+      <workItem from="1712838877196" duration="2378000" />
+      <workItem from="1712893155061" duration="5737000" />
+      <workItem from="1712923773245" duration="5683000" />
+      <workItem from="1713100111911" duration="4044000" />
+      <workItem from="1713178967494" duration="2817000" />
+      <workItem from="1713235309630" duration="31000" />
+      <workItem from="1713270694342" duration="2599000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

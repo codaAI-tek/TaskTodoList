@@ -44,4 +44,8 @@ public class JsonResult<T> {
         return build(data,ResultCodeEnum.FAIL);
     }
 
+    public static<T> JsonResult<T> requestFail(T data){
+        return build(data,ResultCodeEnum.FETCH_ACCESSTOKEN_FAILD);
+    }
+
 }
