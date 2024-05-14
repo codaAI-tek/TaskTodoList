@@ -3,12 +3,14 @@ package com.book.snow.model.Task;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.book.snow.model.Reference.Reference;
 import com.book.snow.model.base.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Data
 @ApiModel("Task实体类")
@@ -35,4 +37,7 @@ public class Task extends BaseEntity {
     @TableField("deadline")
     private Timestamp deadline;
 
+    @ApiModelProperty(value = "refList")
+    @TableField(exist = false)
+    private List<Reference> refList;
 }

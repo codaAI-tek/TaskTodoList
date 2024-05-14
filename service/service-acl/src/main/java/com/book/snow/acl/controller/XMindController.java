@@ -1,17 +1,13 @@
 package com.book.snow.acl.controller;
 
 
-import cn.hutool.json.JSONObject;
 import com.book.snow.common.result.JsonResult;
 import com.book.snow.common.utils.JwtUtuil;
 import com.book.snow.model.XMind.XMind;
 import io.jsonwebtoken.Claims;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import cn.hutool.json.JSONUtil;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +21,7 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 
 @Api(tags = "算法端对接")
 @RestController
@@ -40,52 +37,94 @@ public class XMindController {
             HttpServletRequest request,
             @RequestBody XMind xMind
             ){
-//        String token = request.getHeader("Authorization");
-//        Claims body = JwtUtuil.parseJwt(token);
-        xMind.setToken("token");
-        xMind.setUser(1L);
+        String token = request.getHeader("Authorization");
+        if(token == null){
+            xMind.setToken("fighting");
+            xMind.setUser(xMind.getUser());
+        }else{
+            Claims body = JwtUtuil.parseJwt(token);
+            xMind.setToken("fighting");
+            xMind.setUser(""+body.getId());
+        }
 
-            try {
-                // 设置URL
-                URL url = new URL("http://localhost:5001/add_task");
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        RestTemplate restTemplate = new RestTemplate();
 
-                // 设置请求方法
-                connection.setRequestMethod("POST");
+        // Set request headers
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
 
-                // 设置请求头
-                connection.setRequestProperty("Content-Type", "application/json");
+        // Construct request body
+        String requestBody = "{\"token\": \"fighting\", \"user\": \"winger\", \"text\": \"test text\", \"task\": \"test task\"}" ;
+        String requestBody2 = "{\"token\": \"fighting\", \"user\": \""+xMind.getUser()+"\", \"text\": \""+xMind.getText()+"\", \"task\": \""+xMind.getTask()+"\"}" ;
+        System.out.println(requestBody);
+        System.out.println(requestBody2);
 
-                // 启用输出
-                connection.setDoOutput(true);
 
-                // 设置请求体
-                String jsonInputString = "{\"token\": "+xMind.getToken()+", \"user\": "+xMind.getUser()+", \"text\": "+xMind.getText()+", \"task\": "+xMind.getTask()+"}";
-                try (DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
-                    wr.write(jsonInputString.getBytes());
-                }
+        // Create HttpEntity with headers and body
+        HttpEntity<String> requestEntity = new HttpEntity<>(requestBody2, headers);
 
-                // 读取响应
-                try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
-                    String inputLine;
-                    StringBuilder response = new StringBuilder();
-                    while ((inputLine = in.readLine()) != null) {
-                        response.append(inputLine);
-                    }
-                    System.out.println(response.toString());
-                    return JsonResult.ok(response);
-                }
-                // 关闭连接
-            } catch (Exception e) {
-                e.printStackTrace();
-                return JsonResult.fail(e);
-            }
+        // Define the URL
+        String url = "http://localhost:5001/gen_mind";
+
+        // Send POST request with exchange method
+        ResponseEntity<String> responseEntity = restTemplate.exchange(
+                url,
+                HttpMethod.POST,
+                requestEntity,
+                String.class
+        );
+
+        // Get response body
+        String responseBody = responseEntity.getBody();
+        System.out.println("Response: " + responseBody);
+        return JsonResult.ok(responseBody);
     }
+
+//    @ApiOperation("算法端添加Task")
+//    @PostMapping("/addTask")
+//    public JsonResult addTask(){
+//
+//    }
 
     @ApiOperation("获取算法端信息(Test)")
     @PostMapping("/test")
     public Object getTest(@RequestBody XMind xMind){
-        return xMind;
+        XMind xMind1 = new XMind();
+        xMind1.setToken("hhh");
+        xMind1.setText("hhhh");
+
+
+        RestTemplate restTemplate = new RestTemplate();
+
+        // Set request headers
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        // Construct request body
+        String requestBody = "{\"token\":\"test token\",\"text\":\"text\",\"task\":\"1\",\"user\":\"1\"}";
+        String requestBody2 = "{\"token\": \"fighting\", \"user\": \""+xMind.getUser()+"\", \"text\": \""+xMind.getText()+"\", \"task\": \""+xMind.getTask()+"\"}" ;
+        System.out.println(requestBody);
+        System.out.println(requestBody2);
+
+//        // Create HttpEntity with headers and body
+//        HttpEntity<String> requestEntity = new HttpEntity<>(requestBody, headers);
+//
+//        // Define the URL
+//        String url = "http://localhost:5001/gen_mind";
+//
+//        // Send POST request with exchange method
+//        ResponseEntity<String> responseEntity = restTemplate.exchange(
+//                url,
+//                HttpMethod.POST,
+//                requestEntity,
+//                String.class
+//        );
+//
+//        // Get response body
+//        String responseBody = responseEntity.getBody();
+//        System.out.println("Response: " + responseBody);
+//        return JsonResult.ok(responseBody);
+        return JsonResult.ok(null);
     }
 
 }

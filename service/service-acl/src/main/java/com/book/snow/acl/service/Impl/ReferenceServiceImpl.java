@@ -10,6 +10,8 @@ import com.book.snow.acl.service.IReferenceService;
 import com.book.snow.model.Reference.Reference;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ReferenceServiceImpl extends ServiceImpl<ReferenceMapper, Reference> implements IReferenceService {
     @Override
@@ -21,5 +23,13 @@ public class ReferenceServiceImpl extends ServiceImpl<ReferenceMapper, Reference
         }
         Page<Reference> referencePage = baseMapper.selectPage(pageParam, wrapper);
         return referencePage;
+    }
+
+    @Override
+    public List<Reference> selectByTaskId(Long taskId) {
+        LambdaQueryWrapper<Reference> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(Reference::getTaskId,taskId);
+        List<Reference> references = baseMapper.selectList(wrapper);
+        return references;
     }
 }

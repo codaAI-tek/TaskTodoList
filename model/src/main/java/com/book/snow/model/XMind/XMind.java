@@ -12,12 +12,12 @@ public class XMind {
     private String token;
 
     @ApiModelProperty(value = "用户ID",required = false)
-    private Long user;
+    private String user;
 
     @ApiModelProperty(value = "文本",required = false)
     private String text;
 
     @ApiModelProperty(value = "Task ID",required = false)
-    private Long task;
+    private String task;
 
 }

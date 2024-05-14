@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Api(tags = "Reference管理")
 @RestController
@@ -55,6 +56,16 @@ public class ReferenceController extends BaseEntity {
         return JsonResult.ok(reference);
     }
 
+    @ApiOperation("根据Task_ID查询Reference")
+    @GetMapping("/getInfoByTask/{taskId}")
+    public JsonResult getInfoByTask(
+            @ApiParam(name = "taskId",value = "taskId",required = true)
+            @PathVariable Long taskId
+    ){
+        List<Reference> list = referenceService.selectByTaskId(taskId);
+        return JsonResult.ok(list);
+    }
+
     @ApiOperation("添加Reference")
     @PostMapping("/insert")
     public JsonResult insertUser(HttpServletRequest request, @RequestBody Reference reference){
@@ -67,6 +78,7 @@ public class ReferenceController extends BaseEntity {
         boolean isSuccess = referenceService.save(reference);
         if(isSuccess){
             taskRef.setRefId(reference.getId());
+            taskRef.setTaskId(reference.getTaskId());
             boolean save = taskRefService.save(taskRef);
             if(save){
                 return JsonResult.ok(null);

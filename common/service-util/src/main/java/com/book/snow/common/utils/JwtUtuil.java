@@ -5,6 +5,7 @@
 package com.book.snow.common.utils;
 
 import com.book.snow.model.user.GoogleUser;
+
 import io.jsonwebtoken.*;
 
 import java.util.Date;
@@ -12,7 +13,7 @@ import java.util.UUID;
 
 public class JwtUtuil {
 
-    private static long time = 1000 * 60 * 60 * 1; // Token过期时间 1H
+    private static long time = 1000 * 60 * 60 * 24; // Token过期时间 1H
     private static String sign = "Bearer ";
 
     public static String createToken(GoogleUser user){

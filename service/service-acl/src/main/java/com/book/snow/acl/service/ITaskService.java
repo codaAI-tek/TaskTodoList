@@ -8,4 +8,6 @@ import com.book.snow.model.user.GoogleUser;
 
 public interface ITaskService extends IService<Task> {
     IPage<Task> selectTaskPage(Page<Task> pageParam, Task task);
+
+    Task selectById(long id);
 }

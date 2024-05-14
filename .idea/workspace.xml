@@ -5,59 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b5d55ba-4852-4532-9d4d-9b149586b0ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/config/RestTemplateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/utils/JwtUtuil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/Log/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/Reference/Reference.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/Task/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/TaskRef/TaskRef.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/XMind/XMind.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/base/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/user/GoogleUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/vo/GoogleLoginVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/config/InterceptorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/ReferenceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/RestAuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/StripPayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/TaskController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/XMindController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/intercaptor/TokenFilterInterCaptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/mapper/GoogleLoginMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/mapper/LogMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/mapper/ReferenceMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/mapper/TaskMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/mapper/TaskRefMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/IGoogleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/ILogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/IReferenceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/ITaskRefService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/ITaskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/GoogleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/LogServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/ReferenceServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/TaskRefServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/TaskServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/test/java/com/book/snow/ApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-acl/src/test/java/com/book/snow/test/XMindTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/common-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/service-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/config/Swagger2Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/result/JsonResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/result/JsonResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/service-util/target/classes/com/book/snow/common/config/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/target/classes/com/book/snow/common/config/Swagger2Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/service-util/target/classes/com/book/snow/common/result/JsonResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/target/classes/com/book/snow/common/result/JsonResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/base/UserBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/base/UserBaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/classes/com/book/snow/model/base/UserBaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/classes/com/book/snow/model/base/UserBaseEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/dto/CheckoutForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/dto/CreatePayment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/AddTaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/StripeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/StripeTestControlller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/utils/JwtUtuil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/book/snow/common/utils/JwtUtuil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/target/classes/com/book/snow/common/utils/JwtUtuil.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/target/classes/com/book/snow/common/utils/JwtUtuil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/target/service-util-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/target/service-util-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/Reference/Reference.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/Reference/Reference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/Task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/Task/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/XMind/XMind.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/book/snow/model/XMind/XMind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/book/snow/model/Reference/Reference.class" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/classes/com/book/snow/model/Reference/Reference.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/book/snow/model/Task/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/classes/com/book/snow/model/Task/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/book/snow/model/XMind/XMind.class" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/classes/com/book/snow/model/XMind/XMind.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/service-acl/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/UserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/UserLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/config/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/config/InterceptorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/ReferenceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/ReferenceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/RestAuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/RestAuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/XMindController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/controller/XMindController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/IReferenceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/IReferenceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/ITaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/ITaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/ReferenceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/ReferenceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/TaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/java/com/book/snow/acl/service/Impl/TaskServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/resources/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/controller/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/controller/UserLoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/config/InterceptorConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/config/InterceptorConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/controller/ReferenceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/controller/ReferenceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/controller/RestAuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/controller/RestAuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/controller/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/controller/TaskController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/controller/XMindController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/controller/XMindController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/service/IReferenceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/service/IReferenceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/service/ITaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/service/ITaskService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/service/Impl/ReferenceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/service/Impl/ReferenceServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/service/Impl/TaskServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/com/book/snow/acl/service/Impl/TaskServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/service-acl-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-acl/target/service-acl-1.0-SNAPSHOT.jar.original" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +220,20 @@
       <workItem from="1713100111911" duration="4044000" />
       <workItem from="1713178967494" duration="2817000" />
       <workItem from="1713235309630" duration="31000" />
-      <workItem from="1713270694342" duration="2599000" />
+      <workItem from="1713270694342" duration="4474000" />
+      <workItem from="1713357333742" duration="2397000" />
+      <workItem from="1713361691197" duration="3545000" />
+      <workItem from="1713406628711" duration="2341000" />
+      <workItem from="1713443524857" duration="1874000" />
+      <workItem from="1713448716580" duration="910000" />
+      <workItem from="1713449864419" duration="3431000" />
+      <workItem from="1713514383758" duration="1167000" />
+      <workItem from="1713518654628" duration="871000" />
+      <workItem from="1713696504103" duration="4875000" />
+      <workItem from="1713705210305" duration="2710000" />
+      <workItem from="1713882259592" duration="28000" />
+      <workItem from="1713882314169" duration="642000" />
+      <workItem from="1714368620108" duration="887000" />
     </task>
     <servers />
   </component>

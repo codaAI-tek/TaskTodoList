@@ -51,7 +51,7 @@ public class TaskController {
             @ApiParam(name = "id",value = "用户ID",required = true)
             @PathVariable long id
     ){
-        Task task = taskService.getById(id);
+        Task task = taskService.selectById(id);
         return JsonResult.ok(task);
     }
 

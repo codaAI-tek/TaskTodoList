@@ -19,16 +19,7 @@ public class CorsConfig implements WebMvcConfigurer {
      * .allowedMethods("GET","POST","DELETE","PUT","OPTIONS","HEAD")
      * @param registry
      */
-//    @Override
-//    public void addCorsMappings(CorsRegistry registry){
-//        registry.addMapping("/**")
-//                .allowedOrigins("*")
-//                .allowedOrigins("localhost:6001")
-//                .allowedHeaders("*")
-//                .allowedMethods("GET","POST","DELETE","PUT","OPTIONS","HEAD")
-//                .maxAge(3600);
-//    }
-    // 拦截器跨域配置
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         // 跨域路径

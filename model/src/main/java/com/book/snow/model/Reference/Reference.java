@@ -16,6 +16,10 @@ public class Reference extends BaseEntity {
     @TableField("user_id")
     private Long userId;
 
+    @ApiModelProperty(value = "用户ID")
+    @TableField("task_id")
+    private Long taskId;
+
     @ApiModelProperty(value = "内容")
     @TableField("context")
     private String context;

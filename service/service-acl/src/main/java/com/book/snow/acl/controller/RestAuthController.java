@@ -83,18 +83,18 @@ public class RestAuthController {
 
     private AuthRequest getAuthRequest() {
         return new AuthGoogleRequest(AuthConfig.builder()
-                .clientId("534909237954-bt3cvj7l0u5ougm5jof4rll6c0fkms54.apps.googleusercontent.com")
-                .clientSecret("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")
-                .redirectUri("http://www.akaywj.cloudns.be/plugin/auth/google")
-//                .clientId("894916106231-2rlf1s98a1kcf54ts4mih8t70ts9f4eq.apps.googleusercontent.com")
-//                .clientSecret("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")
-//                .redirectUri("http://localhost:6001/api/oauth/callback/google")
-//                 //针对国外平台配置代理
-//                .httpConfig(HttpConfig.builder()
-//                        .timeout(15000)
-//                        // host 和 port 请修改为开发环境的参数
-//                        .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 7890)))
-//                        .build())
+//                .clientId("534909237954-bt3cvj7l0u5ougm5jof4rll6c0fkms54.apps.googleusercontent.com")
+//                .clientSecret("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")
+//                .redirectUri("http://www.akaywj.cloudns.be/plugin/auth/google")
+                .clientId("894916106231-2rlf1s98a1kcf54ts4mih8t70ts9f4eq.apps.googleusercontent.com")
+                .clientSecret("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")
+                .redirectUri("http://localhost:6001/api/oauth/callback/google")
+                 //针对国外平台配置代理
+                .httpConfig(HttpConfig.builder()
+                        .timeout(15000)
+                        // host 和 port 请修改为开发环境的参数
+                        .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 7890)))
+                        .build())
                 .build());
     }
 
