@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @ApiModel("googleLogin(谷歌登录)")
-@TableName("user")
+@TableName(value = "user", autoResultMap = true)
 public class GoogleUser extends UserBaseEntity {
 
     @ApiModelProperty(value = "账号")

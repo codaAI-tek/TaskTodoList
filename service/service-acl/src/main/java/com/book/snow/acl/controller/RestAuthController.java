@@ -1,12 +1,14 @@
 package com.book.snow.acl.controller;
 
 import com.alibaba.csp.sentinel.util.StringUtil;
+import com.alibaba.fastjson.JSONObject;
 import com.book.snow.acl.service.IGoogleService;
 import com.book.snow.common.result.JsonResult;
 import com.book.snow.common.utils.JwtUtuil;
 import com.book.snow.model.user.GoogleUser;
 import com.book.snow.vo.GoogleLoginVo;
 import com.xkcoding.http.config.HttpConfig;
+import lombok.extern.slf4j.Slf4j;
 import me.zhyd.oauth.config.AuthConfig;
 import me.zhyd.oauth.model.AuthCallback;
 import me.zhyd.oauth.model.AuthResponse;
@@ -15,6 +17,7 @@ import me.zhyd.oauth.request.AuthGoogleRequest;
 import me.zhyd.oauth.request.AuthRequest;
 import me.zhyd.oauth.utils.AuthStateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,7 +29,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+@Slf4j
 @RestController
 @RequestMapping("/oauth")
 public class RestAuthController {
@@ -51,10 +54,11 @@ public class RestAuthController {
     }
 
     @RequestMapping("/callback/{source}")
-    public JsonResult login(AuthCallback callback) {
-
+    public Object login(@PathVariable("source") String source, AuthCallback callback) {
+        log.info("进入callback：" + source + " callback params：" + JSONObject.toJSONString(callback));
         AuthRequest authRequest = getAuthRequest();
         AuthResponse response = authRequest.login(callback);
+        log.info(JSONObject.toJSONString(response));
         AuthUser authUser = (AuthUser) response.getData();
 
         GoogleUser user = new GoogleUser();
@@ -75,10 +79,10 @@ public class RestAuthController {
                 return JsonResult.fail(null);
             }
         }else{
+            user.setId(list.get(0).getId());
             user.setToken(JwtUtuil.createToken(list.get(0)));
             return JsonResult.ok(user);
         }
-
     }
 
     private AuthRequest getAuthRequest() {
@@ -86,15 +90,16 @@ public class RestAuthController {
 //                .clientId("534909237954-bt3cvj7l0u5ougm5jof4rll6c0fkms54.apps.googleusercontent.com")
 //                .clientSecret("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")
 //                .redirectUri("http://www.akaywj.cloudns.be/plugin/auth/google")
-                .clientId("894916106231-2rlf1s98a1kcf54ts4mih8t70ts9f4eq.apps.googleusercontent.com")
-                .clientSecret("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")
-                .redirectUri("http://localhost:6001/api/oauth/callback/google")
+                .clientId("534909237954-bt3cvj7l0u5ougm5jof4rll6c0fkms54.apps.googleusercontent.com")
+                .clientSecret("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")
+//                .redirectUri("http://localhost:6001/api/oauth/callback/google")
+                .redirectUri("http://www.akaywj.cloudns.be/plugin/auth/google")
                  //针对国外平台配置代理
-                .httpConfig(HttpConfig.builder()
-                        .timeout(15000)
-                        // host 和 port 请修改为开发环境的参数
-                        .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 7890)))
-                        .build())
+//                .httpConfig(HttpConfig.builder()
+//                        .timeout(15000)
+//                        // host 和 port 请修改为开发环境的参数
+//                        .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 7890)))
+//                        .build())
                 .build());
     }
 

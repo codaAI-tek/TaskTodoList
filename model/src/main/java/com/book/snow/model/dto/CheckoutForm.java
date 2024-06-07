@@ -1,6 +1,6 @@
 package com.book.snow.model.dto;
 
-import com.sun.istack.internal.NotNull;
+import javax.validation.constraints.NotNull;
 
 public class CheckoutForm {
 
